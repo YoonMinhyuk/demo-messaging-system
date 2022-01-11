@@ -1,0 +1,58 @@
+= REST API GUIDE
+:icons: font
+:app-name: taling-message-api
+:author: minhyuk yoon
+:doctype: book
+:toc: left
+:toclevels: 5
+:toc-title: 목차
+:operation-curl-request-title: curl 요청 예시
+:operation-http-request-title: http 요청 예시
+:operation-path-parameters-title: URI 경로 파라미터
+:operation-request-headers-title: 요청 헤더 예시
+:operation-request-fields-title: 요청 필드 예시
+:operation-request-parameters-title: 요청 파라미터 예시
+:operation-request-parts-title: multi-part 요청 파라미터 예시
+:operation-http-response-title: http 응답 예시
+:operation-response-headers-title: 응답 헤더 예시
+:operation-response-body-title: 응답 본문 필드 예시
+:operation-response-fields-title: 응답 필드 예시
+:operation-links-title: 링크
+
+[[overview]]
+== 개요
+
+[[overview-http-verbs]]
+=== HTTP 동사
+
+본 REST API에서 사용하는 HTTP 동사(verbs)는 가능한한 표준 HTTP와 REST 규약을 따릅니다.
+
+|===
+|동사|용례
+|`GET`|리소스 획득
+|`POST`|리소스 생성
+|`PUT`|리소스 일괄 수정
+|`PATCH`|리소스 부분 수정
+|`DELETE`|리소스 삭제
+|===
+
+[[overview-http-status-codes]]
+=== HTTP 상태 코드
+
+|===
+| `200 OK`| 요청을 성공적으로 처리함
+| `201 CREATED`| 새로운 리소스를 성공적으로 생성함
+| `204 NO CONTENT`| 기존 리소스를 성공적으로 수정함
+| `400 BAD REQUEST`| 잘못된 요청을 보낸 경우
+| `401 UNAUTHORIZED`| 사용자 인증이 필요한 경우.
+로그인을 진행하여 작업을 수행 할 수 있다.
+| `403 FORBIDDEN`| 접근이 금지된 작업을 수행하였을 경우
+| `404 NOT FOUND`| 요청한 리소스가 존재하지 않음
+|===
+
+[[overview-error-message]]
+=== 에러 메세지
+
+에러 메세지는 아래와 같이 일관된 형태로 응답되어진다.
+
+//todo : error response 추가
