@@ -36,6 +36,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+
+    implementation("com.querydsl:querydsl-jpa")
+    kapt("com.querydsl:querydsl-apt:${dependencyManagement.importedProperties["querydsl.version"]}:jpa")
+
+//    java.lang.NoClassDefFoundError 예외 발생시 추가
+//    kapt("jakarta.annotation:jakarta.annotation-api")
+//    kapt("jakarta.persistence:jakarta.persistence-api")
 }
 
 tasks.withType<KotlinCompile> {

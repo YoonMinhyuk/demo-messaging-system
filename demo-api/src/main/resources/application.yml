@@ -1,0 +1,50 @@
+server:
+  port: 8080
+  netty:
+    connection-timeout: "61s"
+
+spring:
+  config:
+    import:
+      - oauth2.yml
+
+  datasource:
+    url: "jdbc:h2:mem:testdb"
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 30
+
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        default_batch_fetch_size: 500
+        foramt_sql: true
+        use_sql_comments: true
+
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: false
+        default-page-size: 20
+        max-page-size: 500
+
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql: trace
